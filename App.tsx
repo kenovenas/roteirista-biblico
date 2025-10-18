@@ -175,10 +175,16 @@ const App: React.FC = () => {
     };
 
     const handleDeleteHistory = (id: string) => {
-        if(activeHistoryId === id) {
-            handleNewScript();
+        const item = history.find(h => h.id === id);
+        const projectName = item?.formData.projectName || 'Roteiro Sem Título';
+        const confirmDelete = window.confirm(`Tem certeza que deseja apagar o roteiro "${projectName}"? Esta ação não pode ser desfeita.`);
+        
+        if (confirmDelete) {
+            if (activeHistoryId === id) {
+                handleNewScript();
+            }
+            deleteHistoryItem(id);
         }
-        deleteHistoryItem(id);
     };
 
     const handleClearHistory = () => {

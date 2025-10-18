@@ -42,18 +42,18 @@ const HistorySidebar: React.FC<HistorySidebarProps> = ({
                     <ul>
                         {history.map(item => (
                             <li key={item.id} className={`border-b border-golden-dark/10 ${activeId === item.id ? 'bg-golden/20' : ''}`}>
-                                <div className="w-full text-left p-3 hover:bg-golden/10 transition group flex justify-between items-center">
-                                    <button onClick={() => onLoad(item.id)} className="flex-grow text-left">
+                                <div className="w-full text-left p-3 hover:bg-golden/10 transition flex justify-between items-center">
+                                    <button onClick={() => onLoad(item.id)} className="flex-grow text-left pr-2">
                                         <p className="font-semibold truncate text-ink-DEFAULT">{item.formData.projectName || 'Roteiro Sem Título'}</p>
                                         <p className="text-xs text-ink-light truncate">{item.formData.story}</p>
                                         <p className="text-xs text-ink-light/70 mt-1">{new Date(item.timestamp).toLocaleString('pt-BR', { day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit' })}</p>
                                     </button>
                                      <button 
                                         onClick={(e) => { e.stopPropagation(); onDelete(item.id); }} 
-                                        className="text-red-400 hover:text-red-600 opacity-0 group-hover:opacity-100 transition p-1 rounded-full hover:bg-red-100 flex-shrink-0"
+                                        className="text-red-500 hover:text-red-700 opacity-60 hover:opacity-100 transition p-1 rounded-full hover:bg-red-500/10 flex-shrink-0"
                                         title="Excluir item"
                                     >
-                                        <TrashIcon />
+                                        <TrashIcon className="h-4 w-4" />
                                      </button>
                                 </div>
                             </li>
