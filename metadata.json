@@ -1,0 +1,5 @@
+{
+  "name": "Roteirista Bíblico ✍️",
+  "description": "An interactive application specializing in generating complete scripts for ~10-minute videos based on biblical stories, including titles, descriptions, tags, and thumbnail prompts for YouTube.",
+  "requestFramePermissions": []
+}
