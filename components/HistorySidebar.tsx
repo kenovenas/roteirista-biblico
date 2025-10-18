@@ -45,8 +45,7 @@ const HistorySidebar: React.FC<HistorySidebarProps> = ({
                                 <div className="w-full text-left p-3 hover:bg-golden/10 transition flex justify-between items-center">
                                     <button onClick={() => onLoad(item.id)} className="flex-grow text-left pr-2">
                                         <p className="font-semibold truncate text-ink-DEFAULT">{item.formData.projectName || 'Roteiro Sem Título'}</p>
-                                        <p className="text-xs text-ink-light truncate">{item.formData.story}</p>
-                                        <p className="text-xs text-ink-light/70 mt-1">{new Date(item.timestamp).toLocaleString('pt-BR', { day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit' })}</p>
+                                        <p className="text-xs text-ink-light/70 mt-1">{new Date(item.timestamp).toLocaleString('pt-BR', { day: '2-digit', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' })}</p>
                                     </button>
                                      <button 
                                         onClick={(e) => { e.stopPropagation(); onDelete(item.id); }} 
